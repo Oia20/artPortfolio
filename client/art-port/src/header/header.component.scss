@@ -1,10 +1,44 @@
 @import '../variables';
 
 .header-quote {
-    background-color: $Wewak;
+    position: relative; /* Ensure proper positioning of children */
     margin: 0;
+    height: 60vh; /* Adjust height as needed */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border-bottom: $Pelorous 2px solid;
+}
 
-    h1 {
-        margin: 0px;
-    }
+.header-quote::before {
+    content: '';
+    position: absolute; /* Position the transparent background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire div */
+    height: 100%;
+    background-color: rgba($Pelorous, 0.1); /* Transparent black background */
+    z-index: 1;
+}
+
+.header-quote h1 {
+    color: $Wewak;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute; /* Position text over the image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering trick */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    z-index: 2; /* Ensure text is on top of the background */
+}
+
+.header-quote img {
+    position: absolute; /* Position image */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire div */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio while covering */
+    z-index: 0; /* Ensure image is behind the background */
 }
