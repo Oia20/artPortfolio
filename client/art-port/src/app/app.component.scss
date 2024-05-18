@@ -1,3 +1,6 @@
+@import '../variables';
+
+
 .left-side {
     width: 50%;
     img {
@@ -9,11 +12,16 @@
 .content {
     display: flex;
     flex-direction: row;
+    height: fit-content;
 }
 
 .divider {
-    width:5px;
-    height: 200px;
-    background: linear-gradient(45deg, red, blue);
-
+    width:3px;
+    height:20vw;
+    background: linear-gradient(45deg, $Pelorous, $Wewak);
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px $Wewak; /* Box shadow */
 }
