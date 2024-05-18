@@ -8,6 +8,7 @@
     display: flex; /* Use flexbox */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
+    transition: transform 0.3s ease;
 }
 
 .header-quote::before {
@@ -74,4 +75,8 @@
     .header-quote h1 {
         font-size: 30px;
     }
+}
+
+.header-quote:hover {
+    transform: scale(1.01);
 }
