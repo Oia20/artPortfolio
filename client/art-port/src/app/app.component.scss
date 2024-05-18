@@ -3,9 +3,16 @@
 
 .left-side {
     width: 50%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
     img {
         max-width: 40%;
         border-radius: 20px;
+        margin: 20px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -24,4 +31,22 @@
     margin-bottom: auto;
     border-radius: 30px;
     box-shadow: 0px 0px 10px $Wewak; /* Box shadow */
+}
+
+.right-side {
+    width: 50%;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media (max-width: 800px) {
+    .divider {
+        height: 3px; /* Adjust as needed */
+        width: 20vw;
+    }
+
+    .content {
+        flex-direction: column;
+    }
 }
