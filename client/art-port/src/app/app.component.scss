@@ -1,4 +1,5 @@
 .left-side {
+    width: 50%;
     img {
         max-width: 40%;
         border-radius: 20px;
@@ -8,4 +9,11 @@
 .content {
     display: flex;
     flex-direction: row;
+}
+
+.divider {
+    width:5px;
+    height: 200px;
+    background: linear-gradient(45deg, red, blue);
+
 }
