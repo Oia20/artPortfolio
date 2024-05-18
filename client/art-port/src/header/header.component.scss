@@ -3,15 +3,11 @@
 
 .header-quote {
     position: relative; /* Ensure proper positioning of children */
-    margin: 0;
+    margin: 20px;
     height: 60vh; /* Adjust height as needed */
     display: flex; /* Use flexbox */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    border-bottom: 2px solid $Wewak;
-
-    box-shadow: 0px 0px 4px $Wewak; /* Box shadow */
-
 }
 
 .header-quote::before {
@@ -33,7 +29,7 @@
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Centering trick */
-    // text-shadow: 2px 2px 1px rgba($Link-Water, 0.5);
+    text-shadow: 2px 2px 1px rgba($Link-Water, 0.5);
     margin: 0;
     z-index: 2; /* Ensure text is on top of the background */
     font-size: 40px;
@@ -47,4 +43,7 @@
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio while covering */
     z-index: 0; /* Ensure image is behind the background */
+    border-radius: 20px;
+    border: 2px solid $Wewak;
+    box-shadow: 0 0 20px $Pelorous;
 }
