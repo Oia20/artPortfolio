@@ -24,7 +24,7 @@
 .header-quote h1 {
     color:$Wewak;
     font-family: "Lora", sans-serif;
-
+    width: 75%;
     position: absolute; /* Position text over the image */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
@@ -46,4 +46,32 @@
     border-radius: 20px;
     border: 2px solid $Wewak;
     box-shadow: 0 0 20px $Pelorous;
+}
+
+.header-quote p {
+    color:$Wewak;
+    font-family: "Lora", sans-serif;
+
+    position: absolute; /* Position text over the image */
+    top: 60%; /* Center vertically */
+    left: 60%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering trick */
+    text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
+    margin: 0;
+    z-index: 2; /* Ensure text is on top of the background */
+    font-size: 20px;
+}
+
+@media (max-width: 800px) {
+    .header-quote p {
+        width: 200px;
+        font-size: 20px;
+        top: 70%; /* Center vertically */
+        left: 70%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Centering trick */
+    }
+
+    .header-quote h1 {
+        font-size: 30px;
+    }
 }
