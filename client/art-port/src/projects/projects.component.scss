@@ -17,12 +17,21 @@
   .project {
     width: 400px;
     margin-bottom: 20px;
-    background-color: #f0f0f0;
+    // background-image: linear-gradient(45deg, $Pelorous, $Wewak);
+    background-color: $Link-Water;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px;
     height: fit-content;
+    border-radius: 20px;
+    border: 2px solid $Wewak;
+    box-shadow: 0 0 20px $Pelorous;
+    transition: transform 0.3s ease;
+
+    &:hover { /* Nesting hover effect within img */
+      transform: scale(1.02);
   }
+}
   
   .project-thumbnail img {
     width: 100%;
@@ -52,9 +61,11 @@
   .tag {
     margin-right: 5px;
     padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 12px;
+    background-color: $Link-Water;
+    border: 2px solid $Wewak;
+    color:darkslategrey;
+    font-size: 13px;
     border-radius: 5px;
+    box-shadow: 4px 4px 5px $Pelorous;
   }
   
