@@ -2,7 +2,7 @@
 <h1>My Creations</h1>
 
 <div class="artist-projects">
-    <div class="project" *ngFor="let project of artistProjects">
+    <div (click)="handleClick(project.image)" class="project" *ngFor="let project of artistProjects">
       <div class="project-thumbnail">
         <img [src]="project.image" alt="Project Image">
       </div>
@@ -11,6 +11,7 @@
         <p class="project-description">{{ project.description }}</p>
         <div class="project-tags">
           <span class="tag">{{ project.medium }}</span>
+          <span class="tag">{{ project.size }}</span>
         </div>
       </div>
     </div>
