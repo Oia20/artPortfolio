@@ -1,5 +1,5 @@
 @import '../variables';
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
 .header-quote {
     position: relative; /* Ensure proper positioning of children */
@@ -24,7 +24,7 @@
 
 .header-quote h1 {
     color:$Wewak;
-    font-family: "Lora", sans-serif;
+    font-family: "Poppins", sans-serif;
     width: 75%;
     position: absolute; /* Position text over the image */
     top: 50%; /* Center vertically */
