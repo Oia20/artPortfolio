@@ -1,1 +1,18 @@
-<p>projects works!</p>
+<!-- artist-projects.component.html -->
+<h1>My Creations</h1>
+
+<div class="artist-projects">
+    <div class="project" *ngFor="let project of artistProjects">
+      <div class="project-thumbnail">
+        <img [src]="project.image" alt="Project Image">
+      </div>
+      <div class="project-details">
+        <h2 class="project-title">{{ project.title }}</h2>
+        <p class="project-description">{{ project.description }}</p>
+        <div class="project-tags">
+          <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,60 @@
+@import '../variables';
+
+.artist-projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+  }
+  h1 {
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
+
+    color:$Wewak;
+
+
+  }
+  .project {
+    width: 400px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    height: fit-content;
+  }
+  
+  .project-thumbnail img {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .project-details {
+    padding: 20px;
+  }
+  
+  .project-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .project-description {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
