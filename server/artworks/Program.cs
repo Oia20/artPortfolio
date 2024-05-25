@@ -1,3 +1,6 @@
+using artworks.models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +18,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapGet("/Projects", async (Projects db) =>
+    await db.Projects.ToListAsync());
 
 app.UseHttpsRedirection();
 
