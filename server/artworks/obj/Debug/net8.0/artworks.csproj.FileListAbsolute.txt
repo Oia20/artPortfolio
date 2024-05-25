@@ -101,3 +101,6 @@ C:\Users\Grant\Documents\GitHub\artPortfolio\server\artworks\bin\Debug\net8.0\ru
 C:\Users\Grant\Documents\GitHub\artPortfolio\server\artworks\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Grant\Documents\GitHub\artPortfolio\server\artworks\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Grant\Documents\GitHub\artPortfolio\server\artworks\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Grant\Documents\GitHub\artPortfolio\server\artworks\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\Grant\Documents\GitHub\artPortfolio\server\artworks\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Grant\Documents\GitHub\artPortfolio\server\artworks\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

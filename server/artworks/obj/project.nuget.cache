@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZbewQpJyguYDfGqV2vjCm+X5ymy2yTIQb3xWuPYv8G4kFAUq2WjAvYwoD+btcsTfGkmB+XmOecBZjd9HLyGsjg==",
+  "dgSpecHash": "o1v/WVybTLWqU+l/cPbwujfTFJ4ZAcQQQVhVNrgShVfVxFvSc6POX22VG9rSgNaGI5Vk5KzQFsBUTwvm/smmfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Grant\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Grant\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Grant\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\8.0.5\\microsoft.aspnetcore.diagnostics.entityframeworkcore.8.0.5.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",
@@ -30,6 +31,8 @@
     "C:\\Users\\Grant\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Grant\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
+    "C:\\Users\\Grant\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.4\\npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Grant\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
