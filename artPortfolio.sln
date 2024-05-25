@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{D41C25DA-5D51-4486-A4FB-B8F81607B197}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "artworks", "server\artworks\artworks.csproj", "{3C6754F4-0899-4DE4-9F67-A1D8808DD307}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C6754F4-0899-4DE4-9F67-A1D8808DD307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C6754F4-0899-4DE4-9F67-A1D8808DD307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C6754F4-0899-4DE4-9F67-A1D8808DD307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C6754F4-0899-4DE4-9F67-A1D8808DD307}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C6754F4-0899-4DE4-9F67-A1D8808DD307} = {D41C25DA-5D51-4486-A4FB-B8F81607B197}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFF3198A-2CB2-4D37-8055-CC79AB53C44A}
+	EndGlobalSection
+EndGlobal
