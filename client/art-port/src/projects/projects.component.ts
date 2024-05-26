@@ -1,15 +1,18 @@
-import { NgForOf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgForOf],
+  imports: [NgForOf, NgIf],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
   artistProjects: any[] = [];
+  isLoading = true;
+  fetchFailed = false;
+  skeletonArray = Array(2); // Array with 4 elements for skeleton loaders
 
   constructor() { }
 
@@ -23,9 +26,13 @@ export class ProjectsComponent implements OnInit {
       .then(response => response.json())
       .then(data => {
         this.artistProjects = data;
+        this.isLoading = false;
+        this.fetchFailed = false;
       })
       .catch(error => {
         console.error('Error fetching projects', error);
+        // this.fetchFailed = true;
+        // Keep isLoading true to persist the skeletons
       });
   }
 
