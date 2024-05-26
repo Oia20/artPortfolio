@@ -4,7 +4,7 @@ using Artworks.models;
 using Microsoft.EntityFrameworkCore;
 namespace Artworks.models
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ProjectsController : ControllerBase
     {

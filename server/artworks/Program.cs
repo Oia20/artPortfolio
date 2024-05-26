@@ -15,17 +15,16 @@ builder.Services.AddDbContext<ArtworksContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
         {
-            options.AddPolicy("AllowSpecificOrigin",
-                builder =>
-                {
-                    builder.WithOrigins("http://127.0.0.1:4200") // Replace with your actual origin
-                           .AllowAnyMethod()
-                           .AllowAnyHeader();
-                });
+            policy.WithOrigins("http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
         });
+});
 var app = builder.Build();
-app.UseCors("AllowSpecificOrigin");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -34,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+app.UseCors();
 
 app.UseAuthorization();
 

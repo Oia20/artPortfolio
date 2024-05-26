@@ -2,13 +2,13 @@
 <h1>My Creations</h1>
 
 <div class="artist-projects">
-    <div (click)="handleClick(project.image)" class="project" *ngFor="let project of artistProjects">
+    <div (click)="handleClick(project.imageurl)" class="project" *ngFor="let project of artistProjects">
       <div class="project-thumbnail">
-        <img [src]="project.image" alt="Project Image">
+        <img [src]="project.imageurl" alt="Project Image">
       </div>
       <div class="project-details">
         <h2 class="project-title">{{ project.title }}</h2>
-        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description">{{ project.desc }}</p>
         <div class="project-tags">
           <span class="tag">{{ project.medium }}</span>
           <span class="tag">{{ project.size }}</span>

@@ -18,7 +18,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   fetchProjects(): void {
-    const apiUrl = 'http://localhost:5103/Projects'; // Replace with your API URL
+    const apiUrl = 'http://localhost:5103/api/Projects'; // Replace with your API URL
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {

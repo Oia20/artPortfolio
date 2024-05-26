@@ -66,6 +66,9 @@
             },
             "development": {
               "buildTarget": "art-port:build:development"
+            },
+            "options": {
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
