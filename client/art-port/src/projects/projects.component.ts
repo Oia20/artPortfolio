@@ -6,40 +6,30 @@ import { Component, OnInit } from '@angular/core';
   standalone: true,
   imports: [NgForOf],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  handleClick(imageUrl: string): void {
-    window.open(imageUrl, '_blank');
-}
-  artistProjects = [
-    {
-      title: 'Project 1',
-      description: 'Description for project 1',
-      image: './assets/DarDock.jpg',
-      medium: 'Watercolor',
-      size: '12x16'
-    },
-    {
-      title: 'Project 2',
-      description: 'Description for project 2',
-      image: './assets/ParkTree.jpg',
-      medium: 'Watercolor',
-      size: '12x16'
-    },
-    {
-      title: 'Project 2',
-      description: 'Description for project 2',
-      image: './assets/ParkTree2.jpg',
-      medium: 'Watercolor',
-      size: '12x16'
-    },
-    // Add more projects here...
-  ];
+  artistProjects: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.fetchProjects();
   }
 
+  fetchProjects(): void {
+    const apiUrl = 'http://localhost:5103/Projects'; // Replace with your API URL
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        this.artistProjects = data;
+      })
+      .catch(error => {
+        console.error('Error fetching projects', error);
+      });
+  }
+
+  handleClick(imageUrl: string): void {
+    window.open(imageUrl, '_blank');
+  }
 }
