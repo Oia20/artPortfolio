@@ -1,0 +1,47 @@
+@import '../../variables';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.nav {
+    width: 100vw;
+    height: 10vh;
+    background-color: $Pelorous;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ad55b6;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.add-project-btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: $Pelorous;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-project-btn:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+        .welcome-message {
+            font-size: 19px;
+    }
+}
