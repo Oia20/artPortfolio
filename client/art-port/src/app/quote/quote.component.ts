@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgIf } from '@angular/common';
 
 //Quote is using the api ninja quote api, limit is 10k requests per month, we shouldn't make a dent in that.
 
 @Component({
   selector: 'app-quote',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './quote.component.html',
   styleUrl: './quote.component.scss'
 })
 export class QuoteComponent {
   // Declaration of two TS string class properties to store quote from api.
-  quote: string = '';
-  author: string = '';
+  isLoading: boolean = true; // Variable to track loading state
+  quote: string = "";
+  author: string = "";
 
   // Constructor for Angulars httpclient.
   constructor(private http: HttpClient) {
@@ -42,11 +44,14 @@ export class QuoteComponent {
 
       // error which handles the error, if there is one.
       error: error => {
+        this.quote = "Believe you can and you're halfway there."
+        this.author = "Theodore Roosevelt"
         console.error('Error fetching quote:', error);
       },
 
       // lastly complete for exiting the fetch.
       complete: () => {
+        // this.isLoading = false; // Set loading to false when request completes
       }
     });
   }

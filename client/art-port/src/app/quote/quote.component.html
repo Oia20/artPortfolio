@@ -1,4 +1,15 @@
-<div class="quote-box">
-    <p>{{quote}}</p>
-    <p>{{author}}</p>
-</div>
+<div *ngIf="isLoading; else quoteContent" class="skeleton-loader">
+    <!-- Skeleton loader markup -->
+    <div class="quote-skel"></div>
+    <div class="quote-skel"></div>
+
+    <div class="author-skel"></div>
+  </div>
+  
+  <ng-template #quoteContent>
+    <div class="quote-box">
+      <p>{{quote}}</p>
+      <p>~ {{author}}</p>
+    </div>
+  </ng-template>
+  
