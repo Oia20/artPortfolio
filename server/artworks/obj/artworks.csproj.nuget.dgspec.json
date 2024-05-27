@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Grant\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj": {}
+    "C:\\Users\\Jacob\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Grant\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj": {
+    "C:\\Users\\Jacob\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Grant\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj",
+        "projectUniqueName": "C:\\Users\\Jacob\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj",
         "projectName": "artworks",
-        "projectPath": "C:\\Users\\Grant\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj",
-        "packagesPath": "C:\\Users\\Grant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Grant\\Documents\\GitHub\\artPortfolio\\server\\artworks\\obj\\",
+        "projectPath": "C:\\Users\\Jacob\\Documents\\GitHub\\artPortfolio\\server\\artworks\\artworks.csproj",
+        "packagesPath": "C:\\Users\\Jacob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jacob\\Documents\\GitHub\\artPortfolio\\server\\artworks\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Grant\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Jacob\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
