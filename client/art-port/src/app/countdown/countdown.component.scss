@@ -1,0 +1,48 @@
+@import '../../variables';
+
+
+h1 {
+    color: #4a5568;
+    text-align: center;
+    margin: 10px;
+}
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    justify-content: center;
+  }
+  
+  .counter {
+    color: rgb(181, 83, 150);
+    background-color: #eed9e4;
+
+
+    border-radius: 20px;
+    border: 2px solid $Wewak;
+    box-shadow: 0 0 20px $Pelorous;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+  }
+  
+  .counter h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #4a5568;
+  }
+  
+  .counter p {
+    font-size: 1.2em;
+    color: #2d3748;
+  }
+  
