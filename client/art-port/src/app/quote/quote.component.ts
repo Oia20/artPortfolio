@@ -27,7 +27,7 @@ export class QuoteComponent {
     this.http.get<{ quote: string, author: string }[]>('https://api.api-ninjas.com/v1/quotes?category=inspirational', {
       // header with included api key.
       headers: {
-        'X-Api-Key': 'I0FGSHrs0O3REcvgvuH4zQ==OYaU3cLbb1Jzz7pn',
+        // 'X-Api-Key': 'I0FGSHrs0O3REcvgvuH4zQ==OYaU3cLbb1Jzz7pn',
       }
       // Each method returns an RxJS Observable which, when subscribed, sends the request and then emits the results when the server responds.
       // may be subscribed any number of times and will make a new backend request for each subscription.
@@ -47,11 +47,12 @@ export class QuoteComponent {
         this.quote = "Believe you can and you're halfway there."
         this.author = "Theodore Roosevelt"
         console.error('Error fetching quote:', error);
+        this.isLoading = false
       },
 
       // lastly complete for exiting the fetch.
       complete: () => {
-        // this.isLoading = false; // Set loading to false when request completes
+        this.isLoading = false; // Set loading to false when request completes
       }
     });
   }
