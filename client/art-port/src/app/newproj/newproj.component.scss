@@ -191,9 +191,11 @@ a {
 }
 
 .thumbnail-image-demo {
-  max-width: 30%;
-  margin:5px
-
+  max-width: 40%;
+  margin:10px;
+  border: 2px solid $Wewak;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px $Pelorous;
 }
 @media (max-width: 400px) {
   .project {

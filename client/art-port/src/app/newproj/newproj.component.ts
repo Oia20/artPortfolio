@@ -18,7 +18,7 @@ export class NewprojComponent implements OnInit{
   medium: string = '';
   size: string = '';
   picture?: File;
-  pictureurl: string = "https://ayyjntjqttcwfulpvggm.supabase.co/storage/v1/object/public/artworks/";
+  pictureurl: string = "";
   success: boolean = false;
   userData: any; // Define a variable to store user data
   ngOnInit() {
