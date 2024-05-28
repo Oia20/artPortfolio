@@ -5,4 +5,5 @@
       <input type="password" placeholder="password" name="password" [(ngModel)]="password" required class="form-control">
       <button type="submit">Login</button>
     </form>
+    <p *NgIf error>{{error}}</p>
 </div>
