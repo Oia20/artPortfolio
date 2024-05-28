@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SupabaseService } from '../supabase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newproj',
@@ -18,8 +19,9 @@ export class NewprojComponent {
   size: string = '';
   picture?: File;
   pictureurl: string = "https://ayyjntjqttcwfulpvggm.supabase.co/storage/v1/object/public/artworks/";
+  success: boolean = false;
 
-  constructor(private supabaseService: SupabaseService) {}
+  constructor(private supabaseService: SupabaseService, private router: Router) {}
 
   async insertProj(title: string, description: string, medium: string, size: string, pictureurl: string) {
     const supabase = this.supabaseService.getSupabaseClient();
@@ -33,8 +35,9 @@ export class NewprojComponent {
       console.error('Error inserting data:', error);
       return null;
     }
-
+    this.success = true
     return data;
+
   }
 
   async uploadPicture() {
@@ -71,14 +74,14 @@ export class NewprojComponent {
         const pictureurl = await this.uploadPicture();
         if (pictureurl) {
           const result = await this.insertProj(this.title, this.description, this.medium, this.size, pictureurl);
-          if (result) {
-            console.log('Project inserted successfully:', result);
+          if (this.success) {
+            console.log('Project inserted successfully:', this.success);
+            this.router.navigate(['/admin']);
           } else {
             console.error('Failed to insert project');
           }
         }
       } catch (error) {
-        console.error('Error:', error);
       }
     }
   }
