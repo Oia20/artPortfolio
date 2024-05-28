@@ -1,94 +1,141 @@
 @import '../../variables';
 
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
+  color: $Wewak;
+}
 
-  h1 {
-    text-align: center;
-    text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
-    color: $Wewak;
-  }
+.heading {
+  margin: 20px;
+}
 
-  .heading {
-    margin: 20px;
-  }
-  .project {
-    width: 400px;
-    height: fit-content;
-    
-    margin-bottom: 20px;
-    background-color: #eed9e4;
+.project {
+  width: 400px;
+  height: fit-content;
+  margin-bottom: 20px;
+  background-color: #eed9e4;
+  border-radius: 20px;
+  border: 2px solid $Wewak;
+  box-shadow: 0 0 20px $Pelorous;
+  overflow: hidden;
+  margin: 20px auto;
+}
 
-    border-radius: 10px;
-    overflow: hidden;
-    margin: auto;
-    
-    margin-top: 20px;
-    border-radius: 20px;
-    border: 2px solid $Wewak;
-    box-shadow: 0 0 20px $Pelorous;
-  }
-  .project-thumbnail {
-    width: 100%;
-    border-bottom: 2px solid #ccc;
-    height: 200px;
-  }
-  .project-details {
-    padding: 20px;
-  }
-  .project-title {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-  .project-description {
-    margin-bottom: 10px;
-    font-size: 14px;
-    width: 100%;
-    height: 50px;
-  }
-  .project-tags {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-  .tag {
-    margin-right: 5px;
-    padding: 5px 10px;
-    background-color: $Link-Water;
-    border: 2px solid $Wewak;
-    color: darkslategrey;
-    font-size: 13px;
-    border-radius: 5px;
-    box-shadow: 4px 4px 5px $Pelorous;
-    max-width: 50%;
-    max-height: 30px;
-  }
-  
-  input {
-    background-color: $Link-Water;
-    border: none;
-    outline: none;
-  }
-  #description {
-    height: 30px;
+.project-thumbnail {
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+  height: 200px;
+}
 
-    border: 2px solid $Wewak;
-    margin-top: 0;
-    background-color: #eed9e4;
-    margin-bottom: 10px;
-    font-size: 14px;
-    width: 100%;
-  }
-  #title {
-    border: 2px solid $Wewak;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 18px;
-    background-color: #eed9e4;
-  }
+.project-details {
+  padding: 20px;
+}
+
+.project-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.project-description {
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+}
+
+.project-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.tag {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: $Link-Water;
+  border: 2px solid $Wewak;
+  color: darkslategrey;
+  font-size: 13px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px $Pelorous;
+  max-width: 50%;
+  max-height: 30px;
+}
+
+input {
+  background-color: $Link-Water;
+  border: none;
+  outline: none;
+}
+
+#description {
+  height: 30px;
+  border: 2px solid $Wewak;
+  margin-top: 0;
+  background-color: #eed9e4;
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+#title {
+  border: 2px solid $Wewak;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  background-color: #eed9e4;
+}
+
+.project-thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #eed9e4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.custom-file-input {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #a976a2;
+  padding: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.custom-file-input:hover {
+  border-color: #7da3cc;
+}
+
+.file-input {
+  display: none;
+  content: "hi";
+
+}
+
+.file-label {
+  font-size: 16px;
+  color: #007bff;
+  pointer-events: none;
+}
+
+
+
 @media (max-width: 400px) {
-    /* Styles for screens that are 600px or smaller */
   .project {
     width: 300px;
   }
 }
-

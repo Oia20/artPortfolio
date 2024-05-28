@@ -3,8 +3,12 @@
   <form (ngSubmit)="onSubmit()" #projectForm="ngForm" class="form">
   <h1 class="heading">New Project</h1>
    <div class="project">
-   <div class="project-thumbnail">
-      <!-- <img [src]="project.imageurl" alt="Project Image"> -->
+    <div class="project-thumbnail">
+      <div class="form-group">
+        <label class="custom-file-input">
+          <input type="file" id="picture" (change)="onFileChange($event)">
+        </label>
+      </div>
     </div>
     <div class="project-details">
         <div class="form-group">
@@ -32,11 +36,6 @@
   </form>
       <!-- Form starts here -->
       <!-- <form (ngSubmit)="onSubmit()" #projectForm="ngForm" class="form">
-  
-        <div class="form-group">
-          <label for="description" class="form-label">Description</label>
-          <textarea id="description" [(ngModel)]="description" name="description" required class="form-control"></textarea>
-        </div>
   
         <div class="form-group">
           <label for="picture" class="form-label">Picture</label>
