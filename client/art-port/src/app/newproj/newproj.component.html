@@ -6,10 +6,17 @@
     <div class="project-thumbnail">
       <div class="form-group">
         <label class="custom-file-input">
+          <ng-container *ngIf="!picture; else changePicture">
+            <h2>Add Picture</h2>
+          </ng-container>
+          <ng-template #changePicture>
+            <h2>Change Picture</h2>
+          </ng-template>
           <input type="file" id="picture" (change)="onFileChange($event)">
-
         </label>
       </div>
+      <!-- Show small version of the image -->
+      <img *ngIf="pictureurl" [src]="pictureurl" class="thumbnail-image-demo" alt="Thumbnail Image">
     </div>
     <div class="project-details">
         <div class="form-group">

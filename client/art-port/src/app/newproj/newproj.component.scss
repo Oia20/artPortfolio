@@ -31,7 +31,7 @@ h1 {
 .project-thumbnail {
   width: 100%;
   border-bottom: 2px solid #ccc;
-  height: 200px;
+  height: fit-content;
 }
 
 .project-details {
@@ -118,29 +118,46 @@ input {
 }
 
 .custom-file-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-  border-radius: 8px;
+  padding: 10px;
+  background-color: $Link-Water;
+  border: 2px solid $Wewak;
+  color: darkslategrey;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px $Pelorous;
   cursor: pointer;
   transition: border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.custom-file-input .file-label {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
 }
 
 .custom-file-input:hover {
   border-color: #7da3cc;
 }
 
-.file-input {
-  display: none;
-}
-
-.file-label {
-  font-size: 16px;
-  color: #007bff;
-  pointer-events: none;
-}
 
 .btn {
   display: flex;
@@ -173,6 +190,11 @@ a {
   text-decoration: none;
 }
 
+.thumbnail-image-demo {
+  max-width: 30%;
+  margin:5px
+
+}
 @media (max-width: 400px) {
   .project {
     width: 300px;

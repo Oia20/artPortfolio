@@ -24,6 +24,8 @@ export class NewprojComponent implements OnInit{
   ngOnInit() {
     this.fetchUserData(); // Call fetchUserData() when the component initializes
   }
+
+  
   constructor(private supabaseService: SupabaseService, private router: Router) {}
   async fetchUserData() {
     try {
@@ -86,7 +88,15 @@ export class NewprojComponent implements OnInit{
   }
 
   onFileChange(event: any) {
-    this.picture = event.target.files[0];
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.pictureurl = e.target.result; // Set pictureurl to the data URL
+      };
+      reader.readAsDataURL(file); // Read the file as a data URL
+      this.picture = file; // Store the file for later use (e.g., for uploading)
+    }
   }
 
   async onSubmit() {
@@ -106,4 +116,5 @@ export class NewprojComponent implements OnInit{
       }
     }
   }
+  
 }
