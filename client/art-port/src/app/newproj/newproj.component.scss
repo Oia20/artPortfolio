@@ -6,16 +6,22 @@
     text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
     color: $Wewak;
   }
-  .project {
-    width: 90%;
-    height: 70vh;
 
+  .heading {
+    margin: 20px;
+  }
+  .project {
+    width: 400px;
+    height: fit-content;
+    
     margin-bottom: 20px;
     background-color: #eed9e4;
 
     border-radius: 10px;
     overflow: hidden;
     margin: auto;
+    
+    margin-top: 20px;
     border-radius: 20px;
     border: 2px solid $Wewak;
     box-shadow: 0 0 20px $Pelorous;
@@ -23,7 +29,7 @@
   .project-thumbnail {
     width: 100%;
     border-bottom: 2px solid #ccc;
-    height: 50%
+    height: 200px;
   }
   .project-details {
     padding: 20px;
@@ -36,10 +42,13 @@
   .project-description {
     margin-bottom: 10px;
     font-size: 14px;
+    width: 100%;
+    height: 50px;
   }
   .project-tags {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
   .tag {
     margin-right: 5px;
@@ -50,5 +59,36 @@
     font-size: 13px;
     border-radius: 5px;
     box-shadow: 4px 4px 5px $Pelorous;
+    max-width: 50%;
+    max-height: 30px;
   }
   
+  input {
+    background-color: $Link-Water;
+    border: none;
+    outline: none;
+  }
+  #description {
+    height: 30px;
+
+    border: 2px solid $Wewak;
+    margin-top: 0;
+    background-color: #eed9e4;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+  }
+  #title {
+    border: 2px solid $Wewak;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: #eed9e4;
+  }
+@media (max-width: 400px) {
+    /* Styles for screens that are 600px or smaller */
+  .project {
+    width: 300px;
+  }
+}
+
