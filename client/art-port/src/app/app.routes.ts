@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { NewprojComponent } from './newproj/newproj.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     {   path: 'home', 
@@ -17,6 +18,10 @@ export const routes: Routes = [
     {
         path: 'ily',
         component: CountdownComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: 'new',

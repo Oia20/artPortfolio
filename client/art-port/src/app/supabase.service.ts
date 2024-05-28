@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient, AuthUser} from '@supabase/supabase-js';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,5 +14,15 @@ export class SupabaseService {
 
   getSupabaseClient(): SupabaseClient {
     return this.supabase;
+  }
+
+  async signIn(email: string, password: string) {
+    const { data, error } = await this.supabase.auth.signInWithPassword({ email, password });
+    if (error) {
+      console.error('Error signing in:', error.message);
+    } else {
+      console.log('Signed in successfully:', data);
+      // Redirect or perform any other actions after successful login
+    }
   }
 }
