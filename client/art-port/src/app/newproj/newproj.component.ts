@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './newproj.component.html',
   styleUrls: ['./newproj.component.scss']
 })
-export class NewprojComponent {
+export class NewprojComponent implements OnInit{
   title: string = '';
   description: string = '';
   medium: string = '';
@@ -20,9 +20,30 @@ export class NewprojComponent {
   picture?: File;
   pictureurl: string = "https://ayyjntjqttcwfulpvggm.supabase.co/storage/v1/object/public/artworks/";
   success: boolean = false;
-
+  userData: any; // Define a variable to store user data
+  ngOnInit() {
+    this.fetchUserData(); // Call fetchUserData() when the component initializes
+  }
   constructor(private supabaseService: SupabaseService, private router: Router) {}
+  async fetchUserData() {
+    try {
+      const supabase = this.supabaseService.getSupabaseClient();
 
+      const { data: { user } } = await supabase.auth.getUser();
+      this.userData = user; // Assign user data to userData variable
+      console.log(this.userData.aud)
+      if (this.userData.aud) {
+        return
+      } else {
+        this.router.navigate(['/login']);
+
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      this.router.navigate(['/login']);
+
+    }
+  }
   async insertProj(title: string, description: string, medium: string, size: string, pictureurl: string) {
     const supabase = this.supabaseService.getSupabaseClient();
 

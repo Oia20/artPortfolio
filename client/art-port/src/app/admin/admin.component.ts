@@ -37,7 +37,6 @@ export class AdminComponent implements OnInit {
     } catch (error) {
       console.error('Error fetching user data:', error);
       this.router.navigate(['/login']);
-
     }
   }
 }
