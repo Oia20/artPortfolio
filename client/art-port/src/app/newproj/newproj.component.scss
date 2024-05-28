@@ -20,6 +20,12 @@ h1 {
   box-shadow: 0 0 20px $Pelorous;
   overflow: hidden;
   margin: 20px auto;
+
+}
+
+.project-thumbnail img {
+  width: 100%;
+  border-bottom: 2px solid #ccc;
 }
 
 .project-thumbnail {
@@ -108,6 +114,7 @@ input {
   position: relative;
   width: 100%;
   max-width: 400px;
+  
 }
 
 .custom-file-input {
@@ -115,7 +122,6 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #a976a2;
   padding: 50px;
   border-radius: 8px;
   cursor: pointer;
@@ -150,6 +156,7 @@ input {
   transition: border-radius 1s ease, background-color 0.3s ease;
   border-radius: 5px; /* Initial border radius */
   margin: auto;
+  margin-bottom: 15px;
 }
 
 .btn:hover {
@@ -160,6 +167,10 @@ input {
 
 .btn:active {
   background-color: #d1e1f3; /* Even darker blue when pressed */
+}
+
+a {
+  text-decoration: none;
 }
 
 @media (max-width: 400px) {
