@@ -6,4 +6,4 @@ Stack-
 
 Frontend: Angular
 
-Backend:Dotnet API, REST api's, postgressql
+Backend:Dotnet API, REST api's, postgressql, firebase, supabase
