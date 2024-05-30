@@ -4,6 +4,6 @@ CMS with full CRUD operations, allowing the user to add their artworks with an i
 
 Stack-
 
-Frontend: Angular, firebase hosting
+Frontend: Angular, firebase hosting, HTML, CSS, JS
 
-Backend:Dotnet API, REST api's, postgressql, firebase, supabase
+Backend:Dotnet API, REST api's, postgressql, firebase, supabase, docker, railway
