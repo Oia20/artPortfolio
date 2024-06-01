@@ -7,9 +7,12 @@ h1 {
 }
 
 .artist-projects {
+  position: absolute;
   column-count: 3; /* Number of columns */
   column-gap: 16px; /* Gap between columns */
   padding: 16px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .project {
@@ -21,6 +24,8 @@ h1 {
   border-radius: 20px;
   border: 2px solid $Wewak;
   box-shadow: 0 0 20px $Pelorous;
+  max-width: 400px;
+  min-width: 399px;
   transition: transform 0.3s ease;
   break-inside: avoid; /* Prevent breaking items inside columns */
   &:hover {
@@ -127,13 +132,13 @@ h1 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .artist-projects {
     column-count: 2; /* Two columns on smaller screens */
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 850px) {
   .artist-projects {
     column-count: 1; /* One column on very small screens */
   }
