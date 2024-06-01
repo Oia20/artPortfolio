@@ -6,4 +6,4 @@ Stack-
 
 Frontend: Angular, firebase hosting, HTML, CSS, JS
 
-Backend:Dotnet API, REST api's, postgressql, firebase, supabase, docker, railway
+Backend:Dotnet API, REST api's, postgressql, firebase, supabase, docker, railway, S3
