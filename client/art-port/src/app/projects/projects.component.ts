@@ -13,7 +13,7 @@ export class ProjectsComponent implements OnInit {
   artistProjects: any[] = [];
   isLoading = true;
   fetchFailed = false;
-  skeletonArray = Array(8); // Array with 4 elements for skeleton loaders
+  skeletonArray = Array(6); // Array with 4 elements for skeleton loaders
 
   constructor() { }
 
