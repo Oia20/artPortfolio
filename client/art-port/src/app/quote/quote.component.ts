@@ -33,7 +33,6 @@ export class QuoteComponent {
       // may be subscribed any number of times and will make a new backend request for each subscription.
     }).subscribe({
       // This particular subscribe has an object with 3 steps.
-
       // next which in this fetch handles the expected response.
       next: response => {
         if (response && response.length > 0) {
@@ -50,7 +49,7 @@ export class QuoteComponent {
         this.isLoading = false
       },
 
-      // lastly complete for exiting the fetch.
+      // lastly complete for exiting the fetch and remove the loading skeleton.
       complete: () => {
         this.isLoading = false; // Set loading to false when request completes
       }
