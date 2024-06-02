@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgIf, NgForOf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-select',
@@ -14,7 +15,7 @@ export class ProjectSelectComponent {
   fetchFailed = false;
   skeletonArray = Array(6); // Array with 4 elements for skeleton loaders
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.fetchProjects();
@@ -38,6 +39,6 @@ export class ProjectSelectComponent {
   }
 
   viewProject(projectId: string): void {
-    window.open(`http://localhost:5103/api/Projects/${projectId}`, '_blank');
+    this.router.navigate(['/edit', projectId]);
   }
 }

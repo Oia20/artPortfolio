@@ -5,6 +5,8 @@ import { MainComponent } from './main/main.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { NewprojComponent } from './newproj/newproj.component';
 import { LoginComponent } from './login/login.component';
+import { ProjectEditComponent } from './project-edit/project-edit.component';
+
 
 export const routes: Routes = [
     {   path: 'home', 
@@ -22,6 +24,10 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'edit/:id',
+        component: ProjectEditComponent
     },
     {
         path: 'new',
