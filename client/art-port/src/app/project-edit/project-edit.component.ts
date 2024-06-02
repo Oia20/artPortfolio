@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { NgIf, NgForOf } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-project-edit',
   standalone: true,
@@ -8,28 +9,29 @@ import { Component } from '@angular/core';
   styleUrl: './project-edit.component.scss'
 })
 export class ProjectEditComponent {
-  projectId: string = "";
-  artistProjects: any[] = [];
+  projectId: string | null = null;
+  project: any[] = [];
   fetchFailed = false;
   
-  constructor() { }
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.projectId = this.route.snapshot.paramMap.get('id');
     this.fetchProject();
   }
   fetchProject(): void {
-    const PROJECT_URL = 'http://localhost:5103/api/Projects' + '/' + this.projectId;
+    const PROJECT_URL = 'http://localhost:5103/Projects' + '/' + this.projectId;
     fetch(PROJECT_URL)
       .then(response => response.json())
       .then(data => {
-        this.artistProjects = data;
+        this.project = data;
         this.fetchFailed = false;
       })
       .catch(error => {
         console.error('Error fetching projects', error);
-        setTimeout(() => this.fetchProject(), 2000);
-        // this.fetchFailed = true;
-        // Keep isLoading true to persist the skeletons
+        console.log(this.project)
+        // setTimeout(() => this.fetchProject(), 2000);
       });
   }
   
