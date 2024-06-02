@@ -143,3 +143,10 @@ h1 {
     column-count: 1; /* One column on very small screens */
   }
 }
+
+@media (max-width: 400px) {
+  .project {
+    max-width: 300px;
+    min-width: 299px; /* One column on very small screens */
+  }
+}
