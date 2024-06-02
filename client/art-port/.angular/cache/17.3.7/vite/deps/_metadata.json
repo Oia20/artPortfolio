@@ -1,62 +1,56 @@
 {
-  "hash": "0b4caabe",
-  "configHash": "4491e983",
+  "hash": "33eef3ff",
+  "configHash": "2be9a3fc",
   "lockfileHash": "b5b92098",
-  "browserHash": "919e7b82",
+  "browserHash": "712ead7e",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "c496fe8b",
+      "fileHash": "180b4e0a",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "bb07e14b",
+      "fileHash": "11f844ee",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "7e203f96",
+      "fileHash": "a375211b",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "5cceb896",
+      "fileHash": "aab1b2a8",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "8d21246e",
+      "fileHash": "31140f53",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "886b36e4",
-      "needsInterop": false
-    },
-    "rxjs": {
-      "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
-      "file": "rxjs.js",
-      "fileHash": "f637af63",
+      "fileHash": "6a3fb037",
       "needsInterop": false
     },
     "@supabase/supabase-js": {
       "src": "../../../../../node_modules/@supabase/supabase-js/dist/module/index.js",
       "file": "@supabase_supabase-js.js",
-      "fileHash": "0df124e3",
+      "fileHash": "a662b3b8",
       "needsInterop": false
     },
-    "masonry-layout": {
-      "src": "../../../../../node_modules/masonry-layout/masonry.js",
-      "file": "masonry-layout.js",
-      "fileHash": "940b594e",
-      "needsInterop": true
+    "rxjs": {
+      "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "92ee5596",
+      "needsInterop": false
     }
   },
   "chunks": {
