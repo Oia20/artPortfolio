@@ -1,0 +1,37 @@
+<h1>Edit Projects</h1>
+
+<div class="artist-projects">
+  <ng-container *ngIf="!isLoading && !fetchFailed; else loading">
+    <div (click)="viewProject(project.id)" class="project" *ngFor="let project of artistProjects">
+      <div class="project-thumbnail">
+        <img [src]="project.imageurl" alt="Project Image">
+      </div>
+      <div class="project-details">
+        <h2 class="project-title">{{ project.title }}</h2>
+        <p class="project-description">{{ project.desc }}</p>
+        <div class="project-tags">
+          <span class="tag">{{ project.medium }}</span>
+          <span class="tag">{{ project.size }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <ng-container *ngIf="fetchFailed; else skeletons">
+      <div class="error-message">Failed to load projects. Please try again later.</div>
+    </ng-container>
+    <ng-template #skeletons>
+      <div class="project skeleton" *ngFor="let skeleton of skeletonArray">
+        <div class="project-thumbnail skeleton-thumbnail"></div>
+        <div class="project-details">
+          <h2 class="project-title skeleton-title">Loading</h2>
+          <p class="project-description skeleton-description"></p>
+          <div class="project-tags">
+            <span class="tag skeleton-tag"></span>
+            <span class="tag skeleton-tag"></span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

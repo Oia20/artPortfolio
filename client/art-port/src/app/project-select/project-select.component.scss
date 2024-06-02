@@ -1,0 +1,152 @@
+@import '../../variables';
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
+  color: $Wewak;
+}
+
+.artist-projects {
+  position: absolute;
+  column-count: 3; /* Number of columns */
+  column-gap: 16px; /* Gap between columns */
+  padding: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.project {
+  background-color: $Link-Water;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px; /* Space between items */
+  height: fit-content;
+  border-radius: 20px;
+  border: 2px solid $Wewak;
+  box-shadow: 0 0 20px $Pelorous;
+  max-width: 400px;
+  min-width: 399px;
+  transition: transform 0.3s ease;
+  break-inside: avoid; /* Prevent breaking items inside columns */
+  &:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+}
+
+.project-thumbnail img {
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+}
+
+.project-details {
+  padding: 20px;
+}
+
+.project-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.project-description {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: $Link-Water;
+  border: 2px solid $Wewak;
+  color: darkslategrey;
+  font-size: 13px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px $Pelorous;
+}
+
+/* Skeleton styles */
+.skeleton {
+  background-color: #eed9e4;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.skeleton-thumbnail {
+  height: 200px;
+}
+
+.skeleton-title {
+  width: 60%;
+  height: 24px;
+  margin-bottom: 10px;
+  color: rgb(181, 83, 150);
+}
+
+.skeleton-description {
+  width: 80%;
+  height: 16px;
+  margin-bottom: 10px;
+}
+
+.skeleton-tag {
+  width: 30%;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+  margin: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .artist-projects {
+    column-count: 2; /* Two columns on smaller screens */
+  }
+}
+
+@media (max-width: 850px) {
+  .artist-projects {
+    column-count: 1; /* One column on very small screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .project {
+    max-width: 300px;
+    min-width: 299px; /* One column on very small screens */
+  }
+}

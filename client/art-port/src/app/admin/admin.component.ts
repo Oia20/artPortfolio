@@ -4,10 +4,12 @@ import { RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { SupabaseService } from '../supabase.service';
 import { Router } from '@angular/router';
+import { ProjectSelectComponent } from '../project-select/project-select.component';
+
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [QuoteComponent, RouterOutlet, RouterLink],
+  imports: [ProjectSelectComponent, QuoteComponent, RouterOutlet, RouterLink],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'
 })
