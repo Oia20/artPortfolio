@@ -5,6 +5,8 @@ You can also update or delete any painting uploaded.
 
 The artwork is displayed in a pinterest like masonry grid implemented with flexbox.
 
+It uses supabase for auth and a hosted DB.
+
 Stack-
 
 Frontend: Angular, firebase hosting, HTML, CSS, JS
