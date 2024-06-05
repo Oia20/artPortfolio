@@ -7,6 +7,8 @@ The artwork is displayed in a pinterest like masonry grid implemented with flexb
 
 It uses supabase for auth and a hosted DB.
 
+The frontend is hosted with firebase hosting with cloudflare for domain + protection.
+
 Stack-
 
 Frontend: Angular, firebase hosting, HTML, CSS, JS
