@@ -1,7 +1,41 @@
-<p>project-edit works!</p>
+<form (ngSubmit)="onSubmit()" #projectForm="ngForm" class="form">
+  <h1 class="heading">Edit Project</h1>
+  <div class="project">
+    <div class="project-thumbnail">
+      <div class="form-group">
+        <label class="custom-file-input">
+          <ng-template #changePicture>
+            <h2>Change Picture</h2>
+          </ng-template>
+          <input type="file" id="picture" (change)="onFileChange($event)">
+        </label>
+      </div>
+      <img ngif="pictureurl" [src]="pictureurl" else [src]="project.imageurl" alt="No image" class="project-image">
+    </div>
+    <div class="project-details">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="project.title" required>
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <input type="text" class="form-control" id="desc" name="desc" [(ngModel)]="project.desc" required>
+      </div>
+      <div class="form-group">
+        <label for="medium">Medium</label>
+        <input type="text" class="form-control" id="medium" name="medium" [(ngModel)]="project.medium" required>
+      </div>
+      <div class="form-group">
+        <label for="size">Size</label>
+        <input type="text" class="form-control" id="size" name="size" [(ngModel)]="project.size" required>
+      </div>
+      <button type="@submit" class="btn">Submit</button>
+        </div>
+    </div>
+</form>
 <p>Project ID: {{projectId}}</p>
 <p>Project title: {{project.title}}</p>
 <p>Project description: {{project.desc}}</p>
 <p>Project Medium: {{project.medium}}</p>
 <p>Project size: {{project.size}}</p>
-<img [src]="project.imageurl">
+<a routerLink="/admin">Return</a>

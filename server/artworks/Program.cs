@@ -37,6 +37,25 @@ app.MapGet("/Projects/{id}", async (int id, ArtworksContext context) =>
     var project = await context.Projects.FindAsync(id);
     return project;
 });
+
+// update project
+app.MapPut("/Projects/Update/{id}", async (int id, ArtworksContext context, Project project) =>
+{
+    var projectToUpdate = await context.Projects.FindAsync(id);
+    if (projectToUpdate == null)
+    {
+        return Results.NotFound();
+    }
+
+    projectToUpdate.title = project.title;
+    projectToUpdate.desc = project.desc;
+    projectToUpdate.medium = project.medium;
+    projectToUpdate.size = project.size;
+    projectToUpdate.imageurl = project.imageurl;
+    await context.SaveChangesAsync();
+    return Results.Ok(projectToUpdate);
+});
+
 app.UseHttpsRedirection();
 app.UseCors();
 
