@@ -9,6 +9,8 @@ It uses supabase for auth and a hosted DB.
 
 The frontend is hosted with firebase hosting
 
+The dotnet backend API is containerized and the image is hosted on railway
+
 cloudflare for domain + protection.
 
 Stack-
