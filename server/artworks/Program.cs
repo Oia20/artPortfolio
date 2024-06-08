@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.MapGet("/Projects/{id}", async (int id, string title, string desc, string imageUrl, ArtworksContext context) =>
+app.MapGet("/Projects/{id}", async (int id, ArtworksContext context) =>
 {
     var project = await context.Projects.FindAsync(id);
     return project;
