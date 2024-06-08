@@ -7,6 +7,8 @@ The artwork is displayed in a pinterest like masonry grid implemented with flexb
 
 It uses supabase for auth and a hosted DB.
 
+Also using Supabase for S3, which is really AWS.
+
 The frontend is hosted with firebase hosting
 
 The dotnet backend API is containerized and the image is hosted on railway
