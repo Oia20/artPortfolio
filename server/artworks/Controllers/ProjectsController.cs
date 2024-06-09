@@ -17,7 +17,9 @@ namespace Artworks.models
         [HttpGet]
         public async Task<IActionResult> GetArtworks()
         {
-            var Art = await _context.Projects.ToListAsync();
+            var Art = await _context.Projects
+                                      .OrderByDescending(e => e.created_at)
+                                      .ToListAsync();
             return Ok(Art);
             
         }
