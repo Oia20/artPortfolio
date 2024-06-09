@@ -16,10 +16,10 @@ builder.Services.AddDbContext<ArtworksContext>(options =>
 });
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(
-        policy =>
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
         {
-            policy.WithOrigins("http://localhost:4200")
+            builder.WithOrigins("https://rosaliasart.com")
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
         });
