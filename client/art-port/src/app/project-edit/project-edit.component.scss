@@ -1,4 +1,191 @@
-img {
-    max-width: 50%;
+@import '../../variables';
+
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  padding: 10px;
+  background-color: $Link-Water;
+  border: 2px solid $Wewak;
+  color: darkslategrey;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px $Pelorous;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  overflow: hidden;
 }
 
+.custom-file-input input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.custom-file-input .file-label {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.custom-file-input:hover {
+  border-color: #7da3cc;
+}
+
+.project {
+    background-color: $Link-Water;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px; /* Space between items */
+    height: fit-content;
+    border-radius: 20px;
+    border: 2px solid $Wewak;
+    box-shadow: 0 0 20px $Pelorous;
+    max-width: 400px;
+    min-width: 399px;
+    transition: transform 0.3s ease;
+    break-inside: avoid; /* Prevent breaking items inside columns */
+    &:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+  }
+  
+  .project-thumbnail img {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .project-details {
+    padding: 20px;
+  }
+  
+  .project-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .project-description {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: $Link-Water;
+    border: 2px solid $Wewak;
+    color: darkslategrey;
+    font-size: 13px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px $Pelorous;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .form-group {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    
+  }
+  
+  .custom-file-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    padding: 10px;
+    background-color: $Link-Water;
+    border: 2px solid $Wewak;
+    color: darkslategrey;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px $Pelorous;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+  }
+
+  .project {
+    margin: auto;
+  }
+
+  //mordern styling for the form inputs, something sleek and minimal, but not too much
+  input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .form-group input {
+    margin-bottom: 12px;
+  }
+  
+  .form-group input:last-child {
+    margin-bottom: 0;
+  }
+  
+  .heading {
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
+    color: $Wewak;
+    margin: 20px;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-self: flex-end;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }

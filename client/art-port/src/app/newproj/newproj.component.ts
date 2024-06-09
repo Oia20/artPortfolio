@@ -24,7 +24,6 @@ export class NewprojComponent implements OnInit{
   ngOnInit() {
     this.fetchUserData(); // Call fetchUserData() when the component initializes
   }
-
   
   constructor(private supabaseService: SupabaseService, private router: Router) {}
   async fetchUserData() {

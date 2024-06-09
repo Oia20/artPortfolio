@@ -34,7 +34,6 @@ export class ProjectEditComponent {
   // Change the project data
   async onSubmit():  Promise<void> {
     const pictureurl = await this.uploadPicture();
-    if (pictureurl) {
       const PROJECT_URL = 'http://localhost:5103/Projects/Update' + '/' + this.projectId;
       fetch(PROJECT_URL, {
         method: 'PUT',
@@ -53,7 +52,6 @@ export class ProjectEditComponent {
           console.log(this.project)
           // setTimeout(() => this.fetchProject(), 2000);
         });
-    }
   }
   constructor(private route: ActivatedRoute, private supabaseService: SupabaseService) {}
 
@@ -76,8 +74,9 @@ export class ProjectEditComponent {
       });
   }
   async uploadPicture() {
+    // if there is no new picture, reupload the old one
     if (!this.picture) {
-      throw new Error('No picture file selected');
+      return this.project.imageurl;
     }
 
     const supabase = this.supabaseService.getSupabaseClient();
