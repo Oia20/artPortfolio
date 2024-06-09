@@ -1,5 +1,5 @@
 <h1>Edit Projects</h1>
-<p>*Click a project to edit it.*</p>
+<p class="note">*Click a project to edit it.*</p>
 <div class="artist-projects">
   <ng-container *ngIf="!isLoading && !fetchFailed; else loading">
     <div (click)="viewProject(project.id)" class="project" *ngFor="let project of artistProjects">
