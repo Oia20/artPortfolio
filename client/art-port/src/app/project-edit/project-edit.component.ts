@@ -36,7 +36,7 @@ export class ProjectEditComponent implements OnInit{
   // Change the project data
   async onSubmit(): Promise<void> {
     const pictureurl = await this.uploadPicture();
-    const PROJECT_URL = 'http://localhost:5103/Projects/Update' + '/' + this.projectId;
+    const PROJECT_URL = 'https://ravishing-commitment-production.up.railway.app/Projects/Update' + '/' + this.projectId;
     fetch(PROJECT_URL, {
       method: 'PUT',
       headers: {

@@ -20,8 +20,8 @@ builder.Services.AddCors(options =>
         builder =>
         {
             builder.WithOrigins("https://rosaliasart.com")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();
+                                .AllowAnyMethod()
+                                .AllowAnyHeader();
         });
 });
 var app = builder.Build();

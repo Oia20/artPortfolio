@@ -22,7 +22,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   fetchProjects(): void {
-    const apiUrl = 'https://ingenious-analysis-production.up.railway.app/api/Projects'; // Replace with your API URL
+    const apiUrl = 'https://ravishing-commitment-production.up.railway.app/api/Projects'; // Replace with your API URL
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
