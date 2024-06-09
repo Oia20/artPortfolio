@@ -26,7 +26,7 @@ export class ProjectsComponent implements OnInit {
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        this.artistProjects = data.reverse();
+        this.artistProjects = data;
         this.isLoading = false;
         this.fetchFailed = false;
       })
