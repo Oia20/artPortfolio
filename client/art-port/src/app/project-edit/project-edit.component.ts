@@ -44,7 +44,7 @@ export class ProjectEditComponent implements OnInit{
       },
       body: JSON.stringify({
         title: this.project.title,
-        desc: this.project.desc,
+        desc: this.project.desc + " ",
         medium: this.project.medium,
         size: this.project.size,
         imageurl: pictureurl
@@ -156,4 +156,5 @@ export class ProjectEditComponent implements OnInit{
       });
     }
   }
+  
 }

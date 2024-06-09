@@ -73,7 +73,7 @@ export class NewprojComponent implements OnInit{
       .from('artworks')
       .upload(`${this.picture.name}`, this.picture, {
         cacheControl: '3600',
-        upsert: false
+        upsert: true
       });
 
     if (error) {

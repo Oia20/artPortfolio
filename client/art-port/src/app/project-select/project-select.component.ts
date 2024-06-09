@@ -26,7 +26,7 @@ export class ProjectSelectComponent {
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        this.artistProjects = data;
+        this.artistProjects = data.reverse();
         this.isLoading = false;
         this.fetchFailed = false;
       })
