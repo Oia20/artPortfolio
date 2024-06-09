@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgIf, NgForOf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SupabaseService } from '../supabase.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-project-edit',
@@ -13,13 +14,13 @@ import { Router } from '@angular/router';
   templateUrl: './project-edit.component.html',
   styleUrls: ['./project-edit.component.scss']
 })
-export class ProjectEditComponent {
+export class ProjectEditComponent implements OnInit{
   projectId: string | null = null;
   project: any = {};
   fetchFailed = false;
   picture?: File;
   pictureurl: string = "";
-
+  userData: any; // Define a variable to store user data
   onFileChange(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -67,8 +68,27 @@ export class ProjectEditComponent {
   ngOnInit(): void {
     this.projectId = this.route.snapshot.paramMap.get('id');
     this.fetchProject();
+    this.fetchUserData(); // Call fetchUserData() when the component initializes
   }
+  async fetchUserData() {
+    try {
+      const supabase = this.supabaseService.getSupabaseClient();
 
+      const { data: { user } } = await supabase.auth.getUser();
+      this.userData = user; // Assign user data to userData variable
+      console.log(this.userData.aud)
+      if (this.userData.aud) {
+        return
+      } else {
+        this.router.navigate(['/login']);
+
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      this.router.navigate(['/login']);
+
+    }
+  }
   fetchProject(): void {
     const PROJECT_URL = 'http://localhost:5103/Projects' + '/' + this.projectId;
     fetch(PROJECT_URL)
