@@ -90,7 +90,7 @@ export class ProjectEditComponent implements OnInit{
     }
   }
   fetchProject(): void {
-    const PROJECT_URL = 'http://localhost:5103/Projects' + '/' + this.projectId;
+    const PROJECT_URL = 'https://ravishing-commitment-production.up.railway.app/Projects' + '/' + this.projectId;
     fetch(PROJECT_URL)
       .then(response => response.json())
       .then(data => {
