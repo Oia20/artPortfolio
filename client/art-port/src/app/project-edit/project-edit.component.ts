@@ -4,17 +4,18 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SupabaseService } from '../supabase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-edit',
   standalone: true,
   imports: [RouterLink, FormsModule, NgIf, NgForOf],
   templateUrl: './project-edit.component.html',
-  styleUrl: './project-edit.component.scss'
+  styleUrls: ['./project-edit.component.scss']
 })
 export class ProjectEditComponent {
   projectId: string | null = null;
-  project: any[string] = [];
+  project: any = {};
   fetchFailed = false;
   picture?: File;
   pictureurl: string = "";
@@ -32,33 +33,42 @@ export class ProjectEditComponent {
   }
 
   // Change the project data
-  async onSubmit():  Promise<void> {
+  async onSubmit(): Promise<void> {
     const pictureurl = await this.uploadPicture();
-      const PROJECT_URL = 'http://localhost:5103/Projects/Update' + '/' + this.projectId;
-      fetch(PROJECT_URL, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ title: this.project.title, desc: this.project.desc, medium: this.project.medium, size: this.project.size, imageurl: pictureurl }),
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          this.fetchFailed = false;
-        })
-        .catch(error => {
-          console.error('Error fetching projects', error);
-          console.log(this.project)
-          // setTimeout(() => this.fetchProject(), 2000);
-        });
+    const PROJECT_URL = 'http://localhost:5103/Projects/Update' + '/' + this.projectId;
+    fetch(PROJECT_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: this.project.title,
+        desc: this.project.desc,
+        medium: this.project.medium,
+        size: this.project.size,
+        imageurl: pictureurl
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.fetchFailed = false;
+      this.router.navigate(['/admin']);
+
+    })
+    .catch(error => {
+      console.error('Error updating project', error);
+      this.fetchFailed = true;
+    });
   }
-  constructor(private route: ActivatedRoute, private supabaseService: SupabaseService) {}
+
+  constructor(private route: ActivatedRoute, private supabaseService: SupabaseService, private router: Router) {}
 
   ngOnInit(): void {
     this.projectId = this.route.snapshot.paramMap.get('id');
     this.fetchProject();
   }
+
   fetchProject(): void {
     const PROJECT_URL = 'http://localhost:5103/Projects' + '/' + this.projectId;
     fetch(PROJECT_URL)
@@ -68,11 +78,11 @@ export class ProjectEditComponent {
         this.fetchFailed = false;
       })
       .catch(error => {
-        console.error('Error fetching projects', error);
-        console.log(this.project)
-        // setTimeout(() => this.fetchProject(), 2000);
+        console.error('Error fetching project', error);
+        this.fetchFailed = true;
       });
   }
+
   async uploadPicture() {
     // if there is no new picture, reupload the old one
     if (!this.picture) {
@@ -96,5 +106,34 @@ export class ProjectEditComponent {
     const { publicUrl } = supabase.storage.from('artworks').getPublicUrl(data.path).data;
     this.pictureurl = publicUrl;
     return publicUrl;
+  }
+
+  deleteProject(): void {
+    if (window.confirm('Are you sure you want to delete this project?')) {
+      const PROJECT_URL = 'http://localhost:5103/Projects/Delete' + '/' + this.projectId;
+      fetch(PROJECT_URL, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then(response => {
+        if (response.ok) {
+          // Successful deletion
+          return response.text(); // Return text instead of JSON
+        } else {
+          throw new Error('Failed to delete project');
+        }
+      })
+      .then(data => {
+        console.log('Project deleted:', data);
+        this.fetchFailed = false;
+        this.router.navigate(['/admin']);
+      })
+      .catch(error => {
+        console.error('Error deleting project', error);
+        this.fetchFailed = true;
+      });
+    }
   }
 }

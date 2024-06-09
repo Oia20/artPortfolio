@@ -56,6 +56,19 @@ app.MapPut("/Projects/Update/{id}", async (int id, ArtworksContext context, Proj
     return Results.Ok(projectToUpdate);
 });
 
+//delete project
+app.MapDelete("/Projects/Delete/{id}", async (int id, ArtworksContext context) =>
+{
+    var projectToDelete = await context.Projects.FindAsync(id);
+    if (projectToDelete == null)
+    {
+        return Results.NotFound();
+    }
+    context.Projects.Remove(projectToDelete);
+    await context.SaveChangesAsync();
+    return Results.Ok();
+});
+
 app.UseHttpsRedirection();
 app.UseCors();
 

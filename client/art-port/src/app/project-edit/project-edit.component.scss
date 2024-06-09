@@ -54,10 +54,6 @@
     min-width: 399px;
     transition: transform 0.3s ease;
     break-inside: avoid; /* Prevent breaking items inside columns */
-    &:hover {
-      transform: scale(1.02);
-      cursor: pointer;
-    }
   }
   
   .project-thumbnail img {
@@ -110,7 +106,7 @@
     position: relative;
     width: 100%;
     max-width: 400px;
-    
+    margin-bottom: 30px;
   }
   
   .custom-file-input {
@@ -135,15 +131,31 @@
     margin: auto;
   }
 
-  //mordern styling for the form inputs, something sleek and minimal, but not too much
+  .divider {
+    height: 3px; /* Adjust as needed */
+    width: 80vw;
+    margin: auto;
+    background: linear-gradient(45deg, $Pelorous, $Wewak);
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 55px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px $Wewak; /* Box shadow */
+}
+
   input[type="text"], input[type="number"], select {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    padding-left: 10px;
+
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-top: 5px;
+    background-color: rgb(187, 197, 207);
+    border: 2px solid $Wewak;
+
   }
   
   input[type="submit"] {
@@ -172,20 +184,93 @@
     text-align: center;
     text-shadow: 2px 2px 1px rgba($Pelorous, 0.5);
     color: $Wewak;
-    margin: 20px;
+    margin: 30px;
+    margin-top: 0px;
   }
+
 
   button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    background-color: $Link-Water;
+    border: 2px solid $Wewak;
+    color: darkslategrey;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px $Pelorous;
     cursor: pointer;
-    justify-self: flex-end;
-  }
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: border-radius 0.5s ease;
+    display: flex;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 
-  button:hover {
-    background-color: #45a049;
+button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  background-color: #c9defa;
+    cursor: pointer;
+}
+
+.preview {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+@media (max-width: 400px) {
+  .project {
+    max-width: 300px;
+    min-width: 299px; /* One column on very small screens */
   }
+}
+
+.return {
+  background-color: $Link-Water;
+  border: 2px solid $Wewak;
+  color: darkslategrey;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px $Pelorous;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 1s ease;
+  width: fit-content;
+  text-align: center;
+  margin: 20px;
+  transition: background-color 1s, box-shadow 0.3s;
+  transition: border-radius 0.5s ease;
+&:hover {
+  background-color: #c9defa;
+
+}
+
+  a {
+    color: darkslategrey;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 1s ease;
+    padding: 20px
+}
+}
+.return:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.returns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 20px;
+  color:slategray;
+}

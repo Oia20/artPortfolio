@@ -1,18 +1,24 @@
-<form (ngSubmit)="onSubmit()" #projectForm="ngForm" class="form">
+<div class="returns">
+  <div class="return">
+    <a routerLink="/admin">Return</a>
+  </div>
+  <div (click)="deleteProject()" class="return">
+    <a href="javascript:void(0)">Delete Project</a>
+  </div>
+</div>
+
+<form id="form" (ngSubmit)="onSubmit()" #projectForm="ngForm" class="form">
   <h1 class="heading">Editing Project</h1>
   <div class="">
     <div class="project-thumbnail">
       <div class="form-group">
         <label class="custom-file-input">
-          <ng-template #changePicture>
-          </ng-template>
           <input type="file" id="picture" (change)="onFileChange($event)">
           <h2>Change Picture</h2>
-
         </label>
       </div>
     </div>
-    <div class="project-details">
+    <div class="">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" class="form-control" id="title" name="title" [(ngModel)]="project.title" required>
@@ -29,27 +35,29 @@
         <label for="size">Size</label>
         <input type="text" class="form-control" id="size" name="size" [(ngModel)]="project.size" required>
       </div>
-        </div>
-    </div>
-</form>
-<!-- <p>Project ID: {{projectId}}</p>
-<p>Project title: {{project.title}}</p>
-<p>Project description: {{project.desc}}</p>
-<p>Project Medium: {{project.medium}}</p>
-<p>Project size: {{project.size}}</p> -->
-<div class="project">
-    <div class="project-thumbnail">
-      <img ngif="pictureurl" [src]="pictureurl" else [src]="project.imageurl"alt="Project Image">
-    </div>
-    <div class="project-details">
-      <h2 class="project-title">{{ project.title }}</h2>
-      <p class="project-description">{{ project.desc }}</p>
-      <div class="project-tags">
-        <span class="tag">{{ project.medium }}</span>
-        <span class="tag">{{ project.size }}</span>
-      </div>
     </div>
   </div>
-  <button form="form" type="submit">Submit</button>
+</form>
 
-<a routerLink="/admin">Return</a>
+<div class="divider" role="separator" aria-label="Divider"></div>
+
+<h2 class="preview">Preview</h2>
+
+<div class="project">
+  <div class="project-thumbnail">
+    <img *ngIf="pictureurl; else elseBlock" [src]="pictureurl" alt="Project Image">
+    <ng-template #elseBlock>
+      <img [src]="project.imageurl" alt="Project Image">
+    </ng-template>
+  </div>
+  <div class="project-details">
+    <h2 class="project-title">{{ project.title }}</h2>
+    <p class="project-description">{{ project.desc }}</p>
+    <div class="project-tags">
+      <span class="tag">{{ project.medium }}</span>
+      <span class="tag">{{ project.size }}</span>
+    </div>
+  </div>
+</div>
+
+<button form="form" type="submit">Save Changes</button>
