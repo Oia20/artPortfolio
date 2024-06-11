@@ -17,6 +17,6 @@ cloudflare for domain + protection.
 
 Stack-
 
-Frontend: Angular, firebase hosting, HTML, CSS, JS
+Frontend: TypeScript, Angular, firebase hosting, HTML, CSS, JS
 
 Backend:Dotnet API, REST api's, postgressql, firebase, supabase, docker, railway, S3
