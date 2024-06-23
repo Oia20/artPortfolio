@@ -130,7 +130,7 @@ export class ProjectEditComponent implements OnInit{
 
   deleteProject(): void {
     if (window.confirm('Are you sure you want to delete this project?')) {
-      const PROJECT_URL = 'http://localhost:5103/Projects/Delete' + '/' + this.projectId;
+      const PROJECT_URL = 'https://ravishing-commitment-production.up.railway.app/Projects/Delete' + '/' + this.projectId;
       fetch(PROJECT_URL, {
         method: 'DELETE',
         headers: {
